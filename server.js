@@ -15,7 +15,7 @@ app.use(cors({
 app.use(routes);
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/usernew")
+mongoose.connect("mongodb+srv://rkrohitkumar893:iiAxqRN3LA94eajn@cluster0.2skwndo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then(() =>
     console.log("MongoDB Connected!"))
   
