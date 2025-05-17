@@ -13,29 +13,32 @@ const login= async (req, res) => {
         password:password
       }
 
-    //   let token;
+      let token;
 
-    //   const existingUser = await User.findOne({ username });
-    //   if (existingUser && existingUser.password === password) {
-    //      token = jwt.sign(
-    //         {
-    //             _id: existingUser._id
-    //         },
-    //         JWT_USER_PASSWORD
-    //     );
-    //     console.log(token);
-    //   } else {
-    //     return res.status(400).json({ message: "Invalid username or password" });
-    //   }
+      const existingUser = await User.findOne({ username });
+      if (existingUser && existingUser.password === password) {
+        //  token = jwt.sign(
+        //     {
+        //         _id: existingUser._id
+        //     },
+        //     JWT_USER_PASSWORD
+        // );
+        // console.log(token);
+        return res.json({
+        message: "Login successful"
+      });
+      } else {
+        return res.status(400).json({ message: "Invalid username or password" });
+      }
 
-    //   res.json({ 
-    //     message: "Login successful",
-    //     token
+      // res.json({ 
+      //   message: "Login successful",
+      //   token
     // });
 
-    if (existingUser) {
-      return res.status(400).json({ message: "Login successful" });
-    }
+    // if (existingUser) {
+    //   return res.status(400).json({ message: "Login successful" });
+    // }
 
     } catch (error) {
       console.error("Server Error:", error);
