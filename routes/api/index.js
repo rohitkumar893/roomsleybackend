@@ -9,4 +9,6 @@ router.get("/ping", (req, res) => {
   res.json({ success: "true", message: "successful request" });
 });
 
+router.post("/listings", listings);
+
 module.exports = router;

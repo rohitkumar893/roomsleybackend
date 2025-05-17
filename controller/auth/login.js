@@ -2,7 +2,7 @@ const User = require('../../models/User.model.js')
 const jwt = require('jsonwebtoken')
 // const{ loginValidation }=require("../../services/validation_schema_login")
 
-const JWT_USER_PASSWORD = "rohitrohit"
+// const JWT_USER_PASSWORD = "rohitrohit"
 
 const login= async (req, res) => {
     try {
