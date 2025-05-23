@@ -1,14 +1,24 @@
-const express = require('express')
-const cors = require('cors')
+const express = require('../../models/Listingmodel')
 
-const app = express();
-
-app.use(cors());
-
-app.post('/listings', (req,res) => {
+const createListing = async (req, res) => {
+  try {
     const data = req.body;
-    console.log(data);
-    res.json({message:'got it', data});
-});
+    const newListing = new Listing(data);
+    const savedListing = await newListing.save();
+    res.status(201).json(savedListing);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Something went wrong" });
+  }
+};
 
-module.exports = listings;
+const getAllListings = async (req, res) => {
+  try {
+    const listings = await Listing.find();
+    res.status(200).json(listings);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch listings" });
+  }
+};
+
+module.exports = { createListing, getAllListings };

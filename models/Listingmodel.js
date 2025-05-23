@@ -1,6 +1,6 @@
 const mongoose = require ('mongoose')
 
-const listingSchema = mongoose.Schema({
+const listingSchema = new mongoose.Schema({
     image: String,
     price: String,
     name: String,
@@ -8,4 +8,4 @@ const listingSchema = mongoose.Schema({
     location: String,
 })
 
-module.exports = mongoose.Model('Listings', listingSchema);
+module.exports = mongoose.model('Listings', listingSchema);
