@@ -7,7 +7,8 @@ const { createListing, getAllListings } = require("../../controller/listings/lis
 
 router.post("/signup", signup);
 router.post("/login", login);
-router.post("/listings", listings);
+router.post("/listings", createListing);
+router.post("/getlistings", getAllListings)
 
 
 module.exports = router;

@@ -2,6 +2,8 @@ const express = require('../../models/Listingmodel')
 
 const createListing = async (req, res) => {
   try {
+     console.log("📥 Data received from frontend:", req.body);
+     
     const data = req.body;
     const newListing = new Listing(data);
     const savedListing = await newListing.save();
