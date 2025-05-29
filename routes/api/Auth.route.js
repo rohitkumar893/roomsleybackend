@@ -16,7 +16,6 @@ const upload = multer({ storage });
 
 const signup = require("../../controller/auth/signup");
 const login = require("../../controller/auth/login");
-const { createListing, getAllListings } = require("../../controller/listings/listings")
 
 
 router.post("/signup", signup);
