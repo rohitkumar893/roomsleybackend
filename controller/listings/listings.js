@@ -37,7 +37,9 @@ const getAllListings = async (req, res) => {
 
 const deleteListing =  async(req, res) => {
   try{
-    const dlisting = await Listing.deleteOne(req.body)
+    const { _id } = req.body;
+    const dlisting = await Listing.deleteOne({ _id })
+    res.json(dlisting)
   }
 
   catch(err){
