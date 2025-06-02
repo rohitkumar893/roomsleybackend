@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const multer = require("multer");
 const path = require("path");
-const { createListing, getAllListings } = require("../../controller/listings/listings");
+const { createListing, getAllListings, deleteListing } = require("../../controller/listings/listings");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -22,6 +22,7 @@ router.post("/signup", signup);
 router.post("/login", login);
 router.post("/listings", upload.single("image"), createListing);
 router.post("/getlistings", getAllListings)
+router.post("/deletelisting", deleteListing)
 
 
 module.exports = router;

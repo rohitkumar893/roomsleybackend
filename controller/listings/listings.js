@@ -35,6 +35,14 @@ const getAllListings = async (req, res) => {
   }
 };
 
-module.exports = { createListing, getAllListings };
+const deleteListing =  async(req, res) => {
+  try{
+    const dlisting = await Listing.deleteOne(req.body)
+  }
 
-module.exports = { createListing, getAllListings };
+  catch(err){
+    console.log(err)
+  }
+}
+
+module.exports = { createListing, getAllListings, deleteListing };
