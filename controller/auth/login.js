@@ -10,8 +10,6 @@ const login= async (req, res) => {
         password:password
       }
 
-      let token;
-
       const existingUser = await User.findOne({ username });
       if (existingUser && existingUser.password === password) {
         return res.json({
