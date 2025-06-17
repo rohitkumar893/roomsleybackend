@@ -17,6 +17,8 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use(routes);
 
+
+
 mongoose.connect("mongodb+srv://rkrohitkumar893:iiAxqRN3LA94eajn@cluster0.2skwndo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then(() =>
     console.log("MongoDB Connected!"))
