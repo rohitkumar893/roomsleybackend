@@ -2,17 +2,10 @@ const router = require("express").Router();
 const multer = require("multer");
 const path = require("path");
 const { createListing, getAllListings, deleteListing } = require("../../controller/listings/listings");
+const { storage } = require("../../cloudinary");
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads/");
-  },
-  filename: (req, file, cb) => {
-    const uniqueName = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(null, uniqueName + path.extname(file.originalname));
-  },
-});
 const upload = multer({ storage });
+
 
 const signup = require("../../controller/auth/signup");
 const login = require("../../controller/auth/login");

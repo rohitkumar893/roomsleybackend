@@ -6,10 +6,10 @@ const createListing = async (req, res) => {
     const { price, name, contact, location } = req.body;
 
 
-    const imagePath = req.file ? req.file.filename : "";
+    const imageUrl = req.file.path;
 
     const newListing = new Listing({
-      image: imagePath,
+      image: imageUrl,
       price,
       name,
       contact,
