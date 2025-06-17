@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const cors = require('cors');
 const express = require("express");
 const routes = require('./routes/index');
-
+const path = require("path");
 const { applyTimestamps } = require("./models/User.model");
 
 const app = express();
@@ -13,7 +13,7 @@ app.use(cors({
   methods:["GET","POST","PUT","DELETE"]
 }));
 
-app.use("/uploads");
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use(routes);
 
