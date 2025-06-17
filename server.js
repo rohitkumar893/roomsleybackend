@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const cors = require('cors');
 const express = require("express");
 const routes = require('./routes/index');
+const path = require("path");
 const { applyTimestamps } = require("./models/User.model");
 
 const app = express();
