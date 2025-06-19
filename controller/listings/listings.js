@@ -27,7 +27,18 @@ const createListing = async (req, res) => {
 
 const getAllListings = async (req, res) => {
   try {
-    const listings = await Listing.find();
+    const { search } = req.body;
+
+    const query = search
+      ? {
+          $or: [
+            { name: { $regex: search, $options: "i" } },
+            { location: { $regex: search, $options: "i" } }
+          ]
+        }
+      : {};
+
+    const listings = await Listing.find(query);
     res.status(200).json(listings);
   } catch (err) {
     console.error("❌ Error in getAllListings:", err);
