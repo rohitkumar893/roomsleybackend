@@ -26,7 +26,7 @@ mongoose.connect("mongodb+srv://rkrohitkumar893:iiAxqRN3LA94eajn@cluster0.2skwnd
   .then(() => {
     const PORT = 3040;
     app.listen(PORT, () => {(
-      console.log("Server Started on port")
+      console.log(`Server started on port ${PORT}`)
       );
     });
   })
