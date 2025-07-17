@@ -20,7 +20,7 @@ const createListing = async (req, res) => {
     const savedListing = await newListing.save();
     res.status(201).json(savedListing);
   } catch (err) {
-    console.error("❌ Error in createListing:", err);
+    console.error("Error in createListing:", err);
     res.status(500).json({ error: "Something went wrong" });
   }
 };
@@ -41,7 +41,7 @@ const getAllListings = async (req, res) => {
     const listings = await Listing.find(query);
     res.status(200).json(listings);
   } catch (err) {
-    console.error("❌ Error in getAllListings:", err);
+    console.error("Error in getAllListings:", err);
     res.status(500).json({ error: "Failed to fetch listings" });
   }
 };
