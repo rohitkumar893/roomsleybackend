@@ -17,7 +17,9 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use(routes);
 
-
+app.get("/ping", (req, res) => {
+  res.send("ping");
+});
 
 mongoose.connect("mongodb+srv://rkrohitkumar893:iiAxqRN3LA94eajn@cluster0.2skwndo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then(() =>

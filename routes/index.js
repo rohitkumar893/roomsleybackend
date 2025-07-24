@@ -6,9 +6,9 @@ const apiRoutes = require("./api/index.js");
 
 router.use("/api", apiRoutes);
 
-router.get("/api/ping", (req, res) => {
-  res.json({ success: true, message: "Backend alive!" });
-});
+// router.get("/api/ping", (req, res) => {
+//   res.json({ success: true, message: "Backend alive!" });
+// });
 
 router.use("/api", (req, res, next) => {
   next(

@@ -3,8 +3,8 @@ const authRoutes = require("./Auth.route");
 
 router.use("/auth", authRoutes);
 
-router.get("/ping", (req, res) => {
-  res.json({ success: "true", message: "successful request" });
-});
+// router.get("/ping", (req, res) => {
+//   res.json({ success: "true", message: "successful request" });
+// });
 
 module.exports = router;
